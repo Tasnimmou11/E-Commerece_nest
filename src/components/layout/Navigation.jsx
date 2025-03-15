@@ -8,85 +8,182 @@ import { LuUser } from "react-icons/lu";
 import { IoChevronDown } from "react-icons/io5";
 import { IoGridOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa6";
+import { IoCloseCircle } from "react-icons/io5";
 import { Link } from "react-router";
 
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
   return (
     <header className="">
       {/* header top part */}
-     <div className="shadow-md md:shadow-none ">
-        
-     <div className="container ">
-        <div className="  flex justify-between items-center py-8 gap-4">
-          <button className="md:hidden text-2xl text-primary">
-          <FaBars />
-          </button>
-          <Link to="/" className="w-32 lg:w-auto">
-            <img src="/logo.png" alt="logo" className="w-full" />
-          </Link>
+      <div className="shadow-md md:shadow-none ">
+        <div className="container ">
+          <div className="  flex justify-between items-center py-8 gap-4">
+            <button
+              onClick={() => setSidebar(true)}
+              className="md:hidden text-2xl text-primary"
+            >
+              <FaBars />
+            </button>
+            <Link to="/" className="w-32 lg:w-auto">
+              <img src="/logo.png" alt="logo" className="" />
+            </Link>
 
-          <div className="border-2 border-brand p-2 lg:p-5 rounded w-full max-w-64 lg:max-w-[700px] hidden  md:flex items-center ">
-            <select name="" id="" className="pr-3.5 border-r-2 text-primary hidden lg:block">
-              <option value="">All Categories</option>
-            </select>
-            <input
-              type="text"
-              placeholder="Search for items"
-              className="px-3.5 w-full lg:w-2/3 outline-0"
-            />
-            <IoSearchOutline className="ml-auto" />
+            <div className="border-2 border-brand p-2 lg:p-5 rounded w-full max-w-64 lg:max-w-[700px] hidden  md:flex items-center ">
+              <select
+                name=""
+                id=""
+                className="pr-3.5 border-r-2 text-primary hidden lg:block"
+              >
+                <option value="">All Categories</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Search for items"
+                className="px-3.5 w-full lg:w-2/3 outline-0"
+              />
+              <IoSearchOutline className="ml-auto" />
+            </div>
+            <div>
+              <ul className=" flex gap-3 :gap-5 text-sm">
+                <li>
+                  <Link to="/" className="flex gap-2 items-end relative">
+                    <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-15">
+                      0
+                    </span>
+                    <IoGitCompareOutline className=" text-xl lg:text-3xl text-secondary" />
+                    <span className="hidden md:block"> Compare</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="flex gap-2 items-end relative">
+                    <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-11">
+                      0
+                    </span>
+                    <IoMdHeartEmpty className="text-xl lg:text-3xl text-secondary" />
+                    <span className="hidden md:block">Wishlist</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="flex gap-2 items-end relative">
+                    <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-6">
+                      0
+                    </span>
+                    <GrCart className="text-xl lg:text-3xl text-secondary" />
+                    <span className="hidden md:block">Cart</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="flex gap-2 items-end relative">
+                    <LuUser className="text-xl lg:text-3xl text-secondary" />
+                    <span className="hidden md:block">Account</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* main menu mobile device */}
+            <nav
+              className={`w-full  h-screen  bg-slate-700 absolute top-0 left-0 transition-all ${
+                sidebar ? "translate-x-0" : "-translate-x-full"
+              }`}
+            >
+              <div className="w-[95%] h-full bg-white overflow-y-auto ">
+                <div className="flex justify-between items-center border-b border-[#ececec] pb-4 mb-4 px-4">
+                  <Link to="/" className="w-32 inline-block">
+                    <img src="/logo.png" alt="logo" className="" />
+                  </Link>
+                  <button
+                    onClick={() => setSidebar(false)}
+                    className="text-3xl  text-green-200 cursor-pointer"
+                  >
+                    <IoCloseCircle />
+                  </button>
+                </div>
+
+                <div className="px-4 flex flex-col gap-4">
+                  <div className="border-2 border-brand  p-2 lg:p-5 rounded   flex items-center ">
+                    <input
+                      type="text"
+                      placeholder="Search for items"
+                      className="px-3.5  lg:w-2/3 outline-0"
+                    />
+                    <IoSearchOutline className="ml-auto" />
+                  </div>
+
+                  <ul className="font-bold text-primary text-base ">
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        About
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        Shop
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        Vendors
+                      </Link>
+                    </li>
+
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        Mega Menu
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        Blog
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        to="/"
+                        className="border-b block border-[#ececec] py-2"
+                      >
+                        Contact
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
           </div>
-          <div>
-            <ul className=" flex gap-3 :gap-5 text-sm">
-              <li>
-                <Link to="/" className="flex gap-2 items-end relative">
-                  <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-15">
-                    0
-                  </span>
-                  <IoGitCompareOutline className=" text-xl lg:text-3xl text-secondary" />
-                  <span className="hidden md:block">  Compare</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="flex gap-2 items-end relative">
-                  <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-11">
-                    0
-                  </span>
-                  <IoMdHeartEmpty className="text-xl lg:text-3xl text-secondary" />
-                  <span className="hidden md:block">Wishlist</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="flex gap-2 items-end relative">
-                  <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-6">
-                    0
-                  </span>
-                  <GrCart className="text-xl lg:text-3xl text-secondary" />
-                  <span className="hidden md:block">Cart</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="flex gap-2 items-end relative">
-                  <LuUser className="text-xl lg:text-3xl text-secondary" />
-                  <span className="hidden md:block">Account</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          {/* main menu mobile device */}
         </div>
       </div>
-     
-     </div>
-      {/* header nav part */}
+      {/* header nav part main menu desktop view */}
       <nav className="hidden md:block md:border-t md:border-[#ECECEC] md:border-b">
         <div className="container flex items-center gap-9 ">
           <div className="relative">
             <h3
               onClick={() => setShow(!show)}
-              className="py-3 px-6 my-3 bg-brand rounded-md text-white font-bold flex items-center gap-2 cursor-pointer"
+              className="py-3 px-6 m-3 bg-brand rounded-md text-xs xl:text-base text-white font-bold flex items-center gap-2 cursor-pointer"
             >
               <IoGridOutline /> Browse All Categories <IoChevronDown />
             </h3>
@@ -159,7 +256,7 @@ const Navigation = () => {
               </div>
             )}
           </div>
-          <ul className="flex gap-8 font-bold text-primary text-lg ">
+          <ul className="flex  gap-3 xl:gap-6 font-bold text-primary text-base xl:text-lg ">
             <li>
               <Link to="/" className="hover:text-brand transition">
                 Home
@@ -188,7 +285,6 @@ const Navigation = () => {
             </li>
             <li>
               <Link to="/" className="hover:text-brand transition">
-                {" "}
                 Blog
               </Link>
             </li>
@@ -199,9 +295,9 @@ const Navigation = () => {
             </li>
           </ul>
           <Link to="tel:1900 - 888" className="ml-auto flex items-center gap-3">
-            <TfiHeadphoneAlt className="text-2xl " />
+            <TfiHeadphoneAlt className="text-3xl xl:text-4xl " />
             <div>
-              <p className="font-bold text-brand text-2xl"> 1900 - 888</p>
+              <p className="font-bold text-brand text-xl xl:text-2xl"> 1900 - 888</p>
               <p className="font-medium text-secondary text-sm ">
                 24/7 Support Center
               </p>
