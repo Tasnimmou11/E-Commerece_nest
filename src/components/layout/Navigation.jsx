@@ -9,6 +9,11 @@ import { IoChevronDown } from "react-icons/io5";
 import { IoGridOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa6";
 import { IoCloseCircle } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa";
+import { FaSquareTwitter } from "react-icons/fa6";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaPinterest } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router";
 
 
@@ -16,7 +21,7 @@ const Navigation = () => {
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   return (
-    <header className="">
+    <header className="relative">
       {/* header top part */}
       <div className="shadow-md md:shadow-none ">
         <div className="container ">
@@ -171,6 +176,71 @@ const Navigation = () => {
                       </Link>
                     </li>
                   </ul>
+                  {/* sign up box */}
+                  <div className="my-4 mx-3 border border-[#ececec]">
+                  <Link to="/" className="flex items-center px-3 py-4 gap-2">
+                    <LuUser className="text-base text-secondary text-brand" />
+                    <span className="text-base">Log In/Sign Up</span>
+                  </Link>
+                    <Link to="tel:1900 - 888" className="flex items-center px-3 pb-4  gap-2">
+                    <TfiHeadphoneAlt className="text-base text-secondary text-brand " />
+                    <div>
+              <p className="text-base"> 1900 - 888</p>
+              </div>
+          </Link>
+                  </div>
+
+                  {/* follow us button */}
+                  
+                    <p className=" px-3 font-bold text-base text-primary">Follow Us</p>
+                  
+                      <ul className="mx-3 flex gap-2">
+                        <li>
+                        <Link
+                        to="/"
+                        className=" text-brand text-3xl "
+                      >
+                        <FaFacebook />
+                      </Link>
+                        </li>
+                        <li>
+                        <Link
+                        to="/"
+                        className=" text-brand text-3xl "
+                      >
+                        < FaSquareTwitter/>
+                      </Link>
+                        </li>
+                        <li>
+                        <Link
+                        to="/"
+                        className=" text-brand text-3xl "
+                      >
+                      <FaInstagramSquare />
+                      </Link>
+                        </li>
+                        <li>
+                        <Link
+                        to="/"
+                        className=" text-brand text-3xl "
+                      >
+                        <FaPinterest/>
+                      </Link>
+                        </li>
+                        <li>
+                        <Link
+                        to="/"
+                        className=" text-brand text-3xl "
+                      >
+                        <FaYoutube/>
+                      </Link>
+                        </li>
+                      </ul>
+                    
+                  <p className="py-4 px-3 text-gray-500 text-sm">Copyright 2024 @ Nest. All rights reserved.Powered by
+                    AliThemes.
+                  </p>
+
                 </div>
               </div>
             </nav>
@@ -179,11 +249,11 @@ const Navigation = () => {
       </div>
       {/* header nav part main menu desktop view */}
       <nav className="hidden md:block md:border-t md:border-[#ECECEC] md:border-b">
-        <div className="container flex items-center gap-9 ">
+        <div className="container flex items-center gap-9 md:gap-2 lg:gap-9 ">
           <div className="relative">
             <h3
               onClick={() => setShow(!show)}
-              className="py-3 px-6 m-3 bg-brand rounded-md text-xs xl:text-base text-white font-bold flex items-center gap-2 cursor-pointer"
+              className="py-3 px-6 m-3 md:px-2  md:py-2 bg-brand rounded-md text-xs lg:text-base xl:text-base text-nowrap text-white font-bold flex items-center gap-2 md:gap-1 cursor-pointer"
             >
               <IoGridOutline /> Browse All Categories <IoChevronDown />
             </h3>
@@ -195,7 +265,7 @@ const Navigation = () => {
                     Milk and Dairies
                   </p>
                 </div>
-                <div className="flex items-center gap-2  cursor-pointer rounded-sm py-2 px-4 hover:shadow-md hover:border-brand border border-[#ECECEC]">
+                <div className="flex items-center gap-2  cursor-pointer rounded-sm py-2 px-4  hover:shadow-md hover:border-brand border border-[#ECECEC]">
                   <img src="/drinks.svg" alt="drinks" className="w-6" />
                   <p className="font-bold text-sm hover:text-brand  text-primary">
                     Wine and Drinks
@@ -256,7 +326,7 @@ const Navigation = () => {
               </div>
             )}
           </div>
-          <ul className="flex  gap-3 xl:gap-6 font-bold text-primary text-base xl:text-lg ">
+          <ul className="flex  gap-3 md:gap-2 lg:gap-4 xl:gap-6 font-bold text-primary text-base md:text-xs lg:text-base xl:text-lg ">
             <li>
               <Link to="/" className="hover:text-brand transition">
                 Home
@@ -279,7 +349,7 @@ const Navigation = () => {
             </li>
 
             <li>
-              <Link to="/" className="hover:text-brand transition">
+              <Link to="/" className=" hover:text-brand transition">
                 Mega Menu
               </Link>
             </li>
@@ -294,11 +364,11 @@ const Navigation = () => {
               </Link>
             </li>
           </ul>
-          <Link to="tel:1900 - 888" className="ml-auto flex items-center gap-3">
-            <TfiHeadphoneAlt className="text-3xl xl:text-4xl " />
+          <Link to="tel:1900 - 888" className="ml-auto flex items-center gap-3 md:gap-1">
+            <TfiHeadphoneAlt className="text-3xl md:text-base xl:text-4xl " />
             <div>
-              <p className="font-bold text-brand text-xl xl:text-2xl"> 1900 - 888</p>
-              <p className="font-medium text-secondary text-sm ">
+              <p className="font-bold text-brand text-xl md:text-base lg:text-xl xl:text-2xl"> 1900 - 888</p>
+              <p className="font-medium text-secondary  text-sm lg:text-sm md:text-xs ">
                 24/7 Support Center
               </p>
             </div>
