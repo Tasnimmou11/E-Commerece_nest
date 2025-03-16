@@ -21,7 +21,7 @@ const Navigation = () => {
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   return (
-    <header className="relative">
+    <header className="relative shadow-sm">
       {/* header top part */}
       <div className="shadow-md md:shadow-none ">
         <div className="container ">
@@ -248,7 +248,7 @@ const Navigation = () => {
         </div>
       </div>
       {/* header nav part main menu desktop view */}
-      <nav className="hidden md:block md:border-t md:border-[#ECECEC] md:border-b">
+      <nav className="hidden md:block md:border-t md:border-[#ECECEC] ">
         <div className="container flex items-center gap-9 md:gap-2 lg:gap-9 ">
           <div className="relative">
             <h3
