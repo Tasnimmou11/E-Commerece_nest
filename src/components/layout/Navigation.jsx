@@ -90,7 +90,7 @@ const Navigation = () => {
             </div>
             {/* main menu mobile device */}
             <nav
-              className={`w-full  h-screen  bg-slate-700 absolute top-0 left-0 transition-all ${
+              className={`w-full z-50 h-screen  bg-slate-700 absolute top-0 left-0 transition-all ${
                 sidebar ? "translate-x-0" : "-translate-x-full"
               }`}
             >
@@ -177,7 +177,7 @@ const Navigation = () => {
                     </li>
                   </ul>
                   {/* sign up box */}
-                  <div className="my-4 mx-3 border border-[#ececec]">
+                  <div className="my-4 mx-3 border border-[#ececec] ">
                   <Link to="/" className="flex items-center px-3 py-4 gap-2">
                     <LuUser className="text-base text-secondary text-brand" />
                     <span className="text-base">Log In/Sign Up</span>
@@ -258,7 +258,7 @@ const Navigation = () => {
               <IoGridOutline /> Browse All Categories <IoChevronDown />
             </h3>
             {show && (
-              <div className="w-md absolute top-22 left-0 p-7 border rounded-md bg-white border-brand grid gap-4 grid-cols-2 ">
+              <div className="z-50 w-md absolute top-22 left-0 p-7 border rounded-md bg-white border-brand grid gap-4 grid-cols-2 ">
                 <div className="flex items-center gap-2  cursor-pointer rounded-sm py-2 px-4 hover:shadow-md hover:border-brand border border-[#ECECEC]">
                   <img src="/dairies.svg" alt="dairies" className="w-6" />
                   <p className="font-bold text-sm hover:text-brand  text-primary">
