@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import CategoryItem from "./CategoryItem";
 
 const Categories = () => {
 return (
@@ -21,6 +22,17 @@ return (
             <Link className="hover:text-brand">Vegetables</Link>
             </li>
         </ul>
+        </div>
+        <div className="mt-11 flex gap-6">
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
+            <CategoryItem/>
         </div>
     </div>
     </section>
