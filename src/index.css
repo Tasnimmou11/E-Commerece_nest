@@ -19,6 +19,6 @@ body{
   @apply bg-brand border-brand;
 }
 .section_heading{
-  @apply font-bold text-3xl text-primary;
+  @apply font-bold text-xl md:text-3xl text-primary;
 }
 
