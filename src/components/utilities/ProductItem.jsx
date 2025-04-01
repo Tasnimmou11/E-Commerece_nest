@@ -4,7 +4,7 @@ import { LuShoppingCart } from 'react-icons/lu'
 
 const ProductItem = () => {
   return (
-    <div className='p-2 md:p-6 border  border-[#ececec] hover:shadow-md hover:border-brand rounded-2xl w-fit relative overflow-hidden '>
+    <div className='p-2 md:p-6 border  border-[#ececec] hover:shadow-md hover:border-brand rounded-2xl w-fit  relative overflow-hidden '>
         <div className='absolute top-0 left-0 bg-brand text-white text-xs px-2 py-1 rounded-br-xl'>
             <p>Hot</p>
         </div>
