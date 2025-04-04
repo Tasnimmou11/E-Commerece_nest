@@ -84,7 +84,7 @@ home</h2>
                     </Link>
                 </div>
                 <div>
-                <div >
+                <div  >
                 <Slider {...settings}>
                 {/* slider div */}
                     <ProductItem></ProductItem>
@@ -103,3 +103,6 @@ home</h2>
 }
 
 export default BestSells
+
+
+
