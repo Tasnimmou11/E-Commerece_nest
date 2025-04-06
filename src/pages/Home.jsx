@@ -5,6 +5,8 @@ import ProductBanner from '../components/Home/ProductBanner'
 import PopularProduct from '../components/Home/PopularProduct'
 import BestSells from '../components/Home/BestSells'
 import DealsOfDay from '../components/Home/DealsOfDay'
+import TopProduct from '../components/Home/TopProduct'
+import BannerEnd from '../components/Home/BannerEnd'
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
     <PopularProduct></PopularProduct>
     <BestSells></BestSells>
     <DealsOfDay></DealsOfDay>
+    <TopProduct></TopProduct>
+    <BannerEnd></BannerEnd>
     </>
   )
 }
