@@ -179,11 +179,11 @@ const Navigation = () => {
                   {/* sign up box */}
                   <div className="my-4 mx-3 border border-[#ececec] ">
                   <Link to="/" className="flex items-center px-3 py-4 gap-2">
-                    <LuUser className="text-base text-secondary text-brand" />
+                    <LuUser className="text-base  text-brand" />
                     <span className="text-base">Log In/Sign Up</span>
                   </Link>
                     <Link to="tel:1900 - 888" className="flex items-center px-3 pb-4  gap-2">
-                    <TfiHeadphoneAlt className="text-base text-secondary text-brand " />
+                    <TfiHeadphoneAlt className="text-base text-brand " />
                     <div>
               <p className="text-base"> 1900 - 888</p>
               </div>

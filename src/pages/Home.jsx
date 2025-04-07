@@ -7,6 +7,8 @@ import BestSells from '../components/Home/BestSells'
 import DealsOfDay from '../components/Home/DealsOfDay'
 import TopProduct from '../components/Home/TopProduct'
 import BannerEnd from '../components/Home/BannerEnd'
+import BannerBox from '../components/Home/BannerBox'
+import Footer from '../components/layout/Footer'
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
     <DealsOfDay></DealsOfDay>
     <TopProduct></TopProduct>
     <BannerEnd></BannerEnd>
+    <BannerBox></BannerBox>
+    
     </>
   )
 }
