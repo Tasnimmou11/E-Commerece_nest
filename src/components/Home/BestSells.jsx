@@ -14,8 +14,8 @@ const BestSells = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        nextArrow: <NextArrow customStyle="absolute -top-10 md:-top-16 right-0" />,
-        prevArrow: <PrevArrow customStyle="absolute -top-10 md:-top-16 right-16" />,
+        nextArrow: <NextArrow customStyle="absolute top-40 right-5" />,
+        prevArrow: <PrevArrow customStyle="absolute top-40  left-5" />,
         responsive: [
             {
                 breakpoint: 1025,
@@ -74,28 +74,28 @@ const BestSells = () => {
             
         </ul>
         </div>
-        <div className='pt-11 grid grid-cols-2'>
-            <div  className="p-5 lg:py-20 lg:px-12 bg-no-repeat bg-cover rounded-xl bg-center w-1/3"
-                style={{ backgroundImage: "url('/bestsellbg.png')" }}> 
+        <div className='pt-11 flex gap-6 '>
+            <div  className="p-5 lg:py-20 lg:px-12 bg-no-repeat bg-cover rounded-xl bg-center w-fit "
+                style={{ backgroundImage: "url('/bestsellbg.png') " }}> 
                     <h2 className='font-bold text-lg lg:text-2xl text-primary xl:w-62 mb-4'>Bring nature
 into your
 home</h2>
                     <Link to="/" className='flex items-center gap-1 w-fit bg-brand py-2 px-2.5 rounded-lg text-white text-xs'>Shop Now <FaArrowRight />
                     </Link>
                 </div>
-                <div>
-                <div  >
+                
+                <div className='w-[75%]  '>
                 <Slider {...settings}>
                 {/* slider div */}
-                    <ProductItem></ProductItem>
-                    <ProductItem></ProductItem>
-                    <ProductItem></ProductItem>
-                    <ProductItem></ProductItem>
+                    
                     <ProductItem></ProductItem>
                     
+                    <ProductItem></ProductItem >
+                    <ProductItem></ProductItem>
+                    <ProductItem></ProductItem>
                     </Slider>
-                </div>
-                </div>
+                    </div>   
+        
         </div>
     </div>
    </section>
