@@ -20,8 +20,8 @@ const BestSells = () => {
             {
                 breakpoint: 1025,
                 settings: {
-                slidesToShow: 4,
-                slidesToScroll: 2,
+                slidesToShow: 3,
+                slidesToScroll: 1,
                 initialSlide: 2,
                 },
             },
@@ -37,14 +37,14 @@ const BestSells = () => {
             breakpoint: 768,
             settings: {
             slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
+            slidesToScroll: 1,
+            initialSlide: 1,
             },
         },
         {
             breakpoint: 512,
             settings: {
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
             },
         },
@@ -55,7 +55,7 @@ const BestSells = () => {
     <div className="container">
     <div className="  justify-between flex md:flex-row flex-col gap-7 items-center md:items-end">
         <h2 className="section_heading">Daily Best Sells</h2>
-        <ul className="flex flex-wrap text-base font-light text-primary gap-1.5 md:gap-7">
+        <ul className="flex  flex-wrap text-base font-light text-primary gap-1.5 md:gap-7">
         <li>
             <button className="hover:text-brand">
             Featured
@@ -74,8 +74,8 @@ const BestSells = () => {
             
         </ul>
         </div>
-        <div className='pt-11 flex gap-6 '>
-            <div  className="p-5 lg:py-20 lg:px-12 bg-no-repeat bg-cover rounded-xl bg-center w-fit "
+        <div className='pt-11 flex   flex-col lg:flex-row gap-6 '>
+            <div  className="p-8 md:hidden xl:block lg:py-20 lg:px-12 bg-no-repeat bg-cover rounded-xl bg-center :w-fit items-center "
                 style={{ backgroundImage: "url('/bestsellbg.png') " }}> 
                     <h2 className='font-bold text-lg lg:text-2xl text-primary xl:w-62 mb-4'>Bring nature
 into your
@@ -84,15 +84,28 @@ home</h2>
                     </Link>
                 </div>
                 
-                <div className='w-[75%]  '>
+                <div className='xl:w-[75%] md:w-full   '>
                 <Slider {...settings}>
                 {/* slider div */}
                     
-                    <ProductItem></ProductItem>
+                    {/* <ProductItem></ProductItem>
                     
                     <ProductItem></ProductItem >
                     <ProductItem></ProductItem>
-                    <ProductItem></ProductItem>
+                    <ProductItem></ProductItem> */}
+
+        <div className="px-2 xl:px-4">
+        <ProductItem />
+        </div>
+        <div className="px-2 xl:px-4">
+        <ProductItem />
+        </div>
+        <div className="px-2 xl:px-4">
+        <ProductItem />
+        </div>
+        <div className="px-2 xl:px-4">
+        <ProductItem />
+        </div>
                     </Slider>
                     </div>   
         

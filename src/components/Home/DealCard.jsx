@@ -4,9 +4,10 @@ import { LuShoppingCart } from 'react-icons/lu'
 
 const DealCard = () => {
   return (
-    <div className='relative group'>
-      <div>
-        <img src="/dealsbg3.png" alt="dealsbg3" className='w-full rounded-2xl' />
+    <div className='pb-33 lg:pb-40  '>
+      <div className='relative group'>
+      <div className=''>
+        <img src="/dealsbg3.png" alt="dealsbg3" className='w-full rounded-2xl ' />
       </div>
       <div className='absolute top-1/2 w-5/6 left-1/2 transition-all -translate-x-1/2 group-hover:-translate-y-5'>
       <div className='flex gap-3.5 justify-center mb-4'>
@@ -23,7 +24,7 @@ const DealCard = () => {
           <p>Days</p>
         </div>
       </div>
-      <div className='bg-white shadow py-6 px-7 rounded-lg '>
+      <div className='bg-white shadow py-6  px-7 rounded-lg '>
           <h3 className=' text-sm md:text-base text-primary font-bold'>Seeds of Change Organic
                 Quinoa, Brown, & Red Rice</h3>
                 <div className="flex gap-3  py-2.5">
@@ -49,7 +50,7 @@ const DealCard = () => {
                 <p className='text-sm font-normal text-secondary
                 '>
                     By <span className='text-brand'>NestFood</span> </p>
-            <div className='flex flex-col md:flex-row gap-2 items-center justify-between pt-6'>
+            <div className='flex flex-row md:flex-row gap-2 items-center justify-between pt-6'>
                 <h4 className='text-sm md:text-lg font-bold  text-brand'>$28.85 
                     <span className='text-secondary 
                      text-sm line-through '>$32.8</span>
@@ -61,6 +62,7 @@ const DealCard = () => {
             </div>
       </div>
       </div>
+    </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ const TopProductItem = () => {
   return (
     <div className='flex pt-7 '>
      
-        <img src="topselling1.png" alt="topselling1" className='w-full' />
+        <img src="topselling1.png" alt="topselling1" className='w-fit lg:w-full' />
      <div className=' py-1 px-3 rounded-lg '>
                <h3 className='w-48 text-sm md:text-base text-primary font-bold'>Nestle Original Coffee-Mate
                Coffee Creamer</h3>
