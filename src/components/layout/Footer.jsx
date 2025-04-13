@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className='pt-16'>
       <div className="container">
         
-        <div className=' flex lg:flex-row flex-col-6 pb-11'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6  pb-11'>
           {/* 1st part */}
          
           <div>
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         
 
-        <div className='pl-3'>
+        <div className='pl-6'>
           <h4 className=' text-2xl font-bold pt-4 '>Company</h4>
         <p className='font-normal text-base pt-5 '>Delivery Information</p>
         <p className='font-normal text-base pt-2 '>Privacy Policy</p>
@@ -48,7 +48,7 @@ const Footer = () => {
         <p className='font-normal text-base pt-2  '>Careers</p>
         
         </div>
-        <div className='pl-12'>
+        <div className=''>
           <h4 className=' text-2xl font-bold pt-4 '>Account</h4>
         <p className='font-normal text-base pt-5 '>Sign In</p>
         <p className='font-normal text-base pt-2 '>View Cart</p>
@@ -61,7 +61,7 @@ const Footer = () => {
        
 
        
-        <div className='pl-12'>
+        <div className=''>
           <h4 className=' text-2xl font-bold pt-4 '>Corporate</h4>
         <p className='font-normal text-base pt-5 '>Become a Vendor</p>
         <p className='font-normal text-base pt-2 '>Affiliate Program</p>
@@ -72,7 +72,7 @@ const Footer = () => {
         <p className='font-normal text-base pt-2  '>Promotions</p>
         </div>
 
-        <div className='pl-12'>
+        <div className=''>
           <h4 className=' text-2xl font-bold pt-4 '> Popular</h4>
         <p className='font-normal text-base pt-5 '>Milk & Flavoured Milk</p>
         <p className='font-normal text-base pt-2 '>Butter and Margarine</p>
@@ -83,7 +83,7 @@ const Footer = () => {
         <p className='font-normal text-base pt-2  '>Cheese</p>
         </div>
  
-        <div className='pl-12'>
+        <div className=''>
           <h4 className=' text-2xl font-bold pt-4 '> Install App</h4>
         <p className='font-normal text-base pt-5 '>From App Store or Google Play</p>
         <p className='font-normal text-base pt-2 '>Secured Payment Gateways</p>
