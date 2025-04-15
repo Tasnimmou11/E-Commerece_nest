@@ -6,9 +6,10 @@ import PopularProduct from '../components/Home/PopularProduct'
 import BestSells from '../components/Home/BestSells'
 import DealsOfDay from '../components/Home/DealsOfDay'
 import TopProduct from '../components/Home/TopProduct'
-import BannerEnd from '../components/Home/BannerEnd'
+
 import BannerBox from '../components/Home/BannerBox'
-import Footer from '../components/layout/Footer'
+
+import Subscribe from '../components/Home/Subscribe'
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
     <BestSells></BestSells>
     <DealsOfDay></DealsOfDay>
     <TopProduct></TopProduct>
-    <BannerEnd></BannerEnd>
+    <Subscribe></Subscribe>
     <BannerBox></BannerBox>
     
     </>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { LuSend } from 'react-icons/lu'
 
-const BannerEnd = () => {
+const Subscribe = () => {
   return (
     <section className='pt-8'>
     <div className="container">
@@ -34,4 +34,4 @@ const BannerEnd = () => {
   )
 }
 
-export default BannerEnd
+export default Subscribe
