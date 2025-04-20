@@ -3,7 +3,7 @@ import { CiHome } from 'react-icons/ci'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { Link, useLocation } from 'react-router'
 
-const BreadCramp = () => {
+const BreadCrumb = () => {
     const location = useLocation().pathname.split("/")[1];
   return (
     <ul className='flex items-center text-secondary font-semibold gap-3'>
@@ -23,4 +23,4 @@ const BreadCramp = () => {
   )
 }
 
-export default BreadCramp
+export default BreadCrumb

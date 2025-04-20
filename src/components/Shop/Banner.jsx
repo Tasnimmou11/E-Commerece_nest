@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router'
-import BreadCramp from '../utilities/BreadCramp.JSX'
+import BreadCrumb from '../utilities/BreadCrumb'
+
+
 
 const Banner = () => {
     
@@ -8,7 +9,7 @@ const Banner = () => {
     <section className='pt-8 pb-12'>
     <div className="container">
        <div className='bg-[url(/shop_bg.png)] bg-no-repeat bg-center rounded-3xl  p-20'>
-        <BreadCramp></BreadCramp>
+        <BreadCrumb/>
         </div> 
     </div> 
     </section>

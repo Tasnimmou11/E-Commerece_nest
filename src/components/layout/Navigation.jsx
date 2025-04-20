@@ -16,7 +16,6 @@ import { FaPinterest } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router";
 
-
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
@@ -72,7 +71,7 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="flex gap-2 items-end relative">
+                  <Link to="/cart" className="flex gap-2 items-end relative">
                     <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-6">
                       0
                     </span>
@@ -178,69 +177,59 @@ const Navigation = () => {
                   </ul>
                   {/* sign up box */}
                   <div className="my-4 mx-3 border border-[#ececec] ">
-                  <Link to="/" className="flex items-center px-3 py-4 gap-2">
-                    <LuUser className="text-base  text-brand" />
-                    <span className="text-base">Log In/Sign Up</span>
-                  </Link>
-                    <Link to="tel:1900 - 888" className="flex items-center px-3 pb-4  gap-2">
-                    <TfiHeadphoneAlt className="text-base text-brand " />
-                    <div>
-              <p className="text-base"> 1900 - 888</p>
-              </div>
-          </Link>
+                    <Link to="/" className="flex items-center px-3 py-4 gap-2">
+                      <LuUser className="text-base  text-brand" />
+                      <span className="text-base">Log In/Sign Up</span>
+                    </Link>
+                    <Link
+                      to="tel:1900 - 888"
+                      className="flex items-center px-3 pb-4  gap-2"
+                    >
+                      <TfiHeadphoneAlt className="text-base text-brand " />
+                      <div>
+                        <p className="text-base"> 1900 - 888</p>
+                      </div>
+                    </Link>
                   </div>
 
                   {/* follow us button */}
-                  
-                    <p className=" px-3 font-bold text-base text-primary">Follow Us</p>
-                  
-                      <ul className="mx-3 flex gap-2">
-                        <li>
-                        <Link
-                        to="/"
-                        className=" text-brand text-3xl "
-                      >
-                        <FaFacebook />
-                      </Link>
-                        </li>
-                        <li>
-                        <Link
-                        to="/"
-                        className=" text-brand text-3xl "
-                      >
-                        < FaSquareTwitter/>
-                      </Link>
-                        </li>
-                        <li>
-                        <Link
-                        to="/"
-                        className=" text-brand text-3xl "
-                      >
-                      <FaInstagramSquare />
-                      </Link>
-                        </li>
-                        <li>
-                        <Link
-                        to="/"
-                        className=" text-brand text-3xl "
-                      >
-                        <FaPinterest/>
-                      </Link>
-                        </li>
-                        <li>
-                        <Link
-                        to="/"
-                        className=" text-brand text-3xl "
-                      >
-                        <FaYoutube/>
-                      </Link>
-                        </li>
-                      </ul>
-                    
-                  <p className="py-4 px-3 text-gray-500 text-sm">Copyright 2024 @ Nest. All rights reserved.Powered by
-                    AliThemes.
+
+                  <p className=" px-3 font-bold text-base text-primary">
+                    Follow Us
                   </p>
 
+                  <ul className="mx-3 flex gap-2">
+                    <li>
+                      <Link to="/" className=" text-brand text-3xl ">
+                        <FaFacebook />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/" className=" text-brand text-3xl ">
+                        <FaSquareTwitter />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/" className=" text-brand text-3xl ">
+                        <FaInstagramSquare />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/" className=" text-brand text-3xl ">
+                        <FaPinterest />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/" className=" text-brand text-3xl ">
+                        <FaYoutube />
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <p className="py-4 px-3 text-gray-500 text-sm">
+                    Copyright 2024 @ Nest. All rights reserved.Powered by
+                    AliThemes.
+                  </p>
                 </div>
               </div>
             </nav>
@@ -364,10 +353,16 @@ const Navigation = () => {
               </Link>
             </li>
           </ul>
-          <Link to="tel:1900 - 888" className="ml-auto flex items-center gap-3 md:gap-1">
+          <Link
+            to="tel:1900 - 888"
+            className="ml-auto flex items-center gap-3 md:gap-1"
+          >
             <TfiHeadphoneAlt className="text-3xl md:text-base xl:text-4xl " />
             <div>
-              <p className="font-bold text-brand text-xl md:text-base lg:text-xl xl:text-2xl"> 1900 - 888</p>
+              <p className="font-bold text-brand text-xl md:text-base lg:text-xl xl:text-2xl">
+                {" "}
+                1900 - 888
+              </p>
               <p className="font-medium text-secondary  text-sm lg:text-sm md:text-xs ">
                 24/7 Support Center
               </p>
