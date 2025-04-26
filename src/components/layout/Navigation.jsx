@@ -80,7 +80,7 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="flex gap-2 items-end relative">
+                  <Link to="/login" className="flex gap-2 items-end relative">
                     <LuUser className="text-xl lg:text-3xl text-secondary" />
                     <span className="hidden md:block">Account</span>
                   </Link>

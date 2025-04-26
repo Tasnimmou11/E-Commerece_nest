@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
 
 function App() {
  
@@ -11,6 +12,7 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
+    <Route path="/login" element={<Login/>} />
       <Route path="/" element={<Layout/>} >
       <Route index element={<Home/>}/>
       <Route path="/shop" element={<Shop/>} />
