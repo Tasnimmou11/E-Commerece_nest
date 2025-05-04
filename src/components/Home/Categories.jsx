@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import CategoryItem from "./CategoryItem";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { NextArrow, PrevArrow } from "../utilities/SliderArrows";
+import axios from 'axios';
 
 const Categories = () => {
+    const[categoryList, setCategoryList]=useState([])
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 10,
+    slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow: <NextArrow customStyle="absolute -top-10 md:-top-16 right-0" />,
     prevArrow: <PrevArrow customStyle="absolute -top-10 md:-top-16 right-16" />,
@@ -48,6 +50,24 @@ const Categories = () => {
     },
     ],
 };
+
+useEffect(()=>{
+ (async()=>{
+    const options = {
+        method: 'GET',
+        url: 'https://api.freeapi.app/api/v1/ecommerce/categories',
+        params: {page: '1', limit: '10'},
+        headers: {accept: 'application/json'}
+      };
+      
+      try {
+        const { data } = await axios.request(options);
+        setCategoryList(data.data.categories);
+      } catch (error) {
+        console.error(error);
+      }
+ })()
+},[])
 return (
     <section className="pt-14 pb-11">
     <div className="container">
@@ -78,18 +98,13 @@ return (
         </div>
         <div className="mt-11 ">
         <Slider {...settings}>
+            {
+                categoryList.map((item)=>(
+                    <CategoryItem key={item._id} data={item}/> 
+                ))
+            }
             {/* slider div */}
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
-            <CategoryItem />
+            
         </Slider>
         </div>
     </div>

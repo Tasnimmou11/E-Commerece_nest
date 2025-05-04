@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MdGridView } from 'react-icons/md'
 import ProductItem from '../utilities/ProductItem'
+import axios from 'axios';
 
 const Products = () => {
+    useEffect(()=>{
+        const api = async ()=>{
+            const options = {
+                method: 'GET',
+                url: 'https://api.freeapi.app/api/v1/ecommerce/products',
+                params: {page: '1', limit: '10'},
+                headers: {accept: 'application/json'}
+              };
+              
+              try {
+                const res = await axios.request(options);
+                console.log(res.data.data);
+              } catch (error) {
+                console.error(error);
+              }
+        };
+        api();
+    },[])
   return (
     <section className=''>
         <div className="container">
