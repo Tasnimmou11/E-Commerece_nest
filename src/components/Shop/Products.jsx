@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdGridView } from 'react-icons/md'
 import ProductItem from '../utilities/ProductItem'
 import axios from 'axios';
 
 const Products = () => {
+  const [productList, setProductList]= useState([]);
     useEffect(()=>{
         const api = async ()=>{
             const options = {
                 method: 'GET',
-                url: 'https://api.freeapi.app/api/v1/ecommerce/products',
+                url: 'https://api.escuelajs.co/api/v1/products',
                 params: {page: '1', limit: '10'},
                 headers: {accept: 'application/json'}
               };
               
               try {
                 const res = await axios.request(options);
-                console.log(res.data.data);
+               
+                setProductList(res.data.data.Products);
+                
               } catch (error) {
                 console.error(error);
               }
         };
         api();
-    },[])
+    },[]);
+    
   return (
     <section className=''>
         <div className="container">
@@ -39,16 +43,12 @@ const Products = () => {
             </div>
             </div>
             <div className='grid grid-cols-6 gap-6'>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
+              {
+                productList.map((item) =>(
+                  <ProductItem key={item._id} data={item}/>
+                ))
+              }
+                
             </div>
         </div>
     </section>

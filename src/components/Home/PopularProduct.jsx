@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductItem from '../utilities/ProductItem'
+import axios from 'axios';
 
 const PopularProduct = () => {
+    const [productList, setProductList]= useState([]);
+    useEffect(()=>{
+        const api = async ()=>{
+            const options = {
+                method: 'GET',
+                url: 'https://api.escuelajs.co/api/v1/products',
+                params: {page: '1', limit: '10'},
+                headers: {accept: 'application/json'}
+              };
+              
+              try {
+                const res = await axios.request(options);
+               
+                setProductList(res.data.data.Products);
+                
+              } catch (error) {
+                console.error(error);
+              }
+        };
+        api();
+    },[]);
   return (
     <section>
         <div className="container">
@@ -46,16 +68,11 @@ const PopularProduct = () => {
         </ul>
         </div>
         <div className='pt-11 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-5 gap-x-6 gap-y-8' >
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
-            <ProductItem></ProductItem>
+        {
+                productList.map((item) =>(
+                <ProductItem key={item._id} data={item}/>
+                ))
+            }
         </div>
         </div>
     </section>

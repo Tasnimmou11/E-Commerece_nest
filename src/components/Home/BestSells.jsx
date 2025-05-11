@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Link } from 'react-router'
 import ProductItem from '../utilities/ProductItem'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import { NextArrow, PrevArrow } from "../utilities/SliderArrows";
+import axios from 'axios';
 
 
 const BestSells = () => {
@@ -50,6 +51,29 @@ const BestSells = () => {
         },
         ],
     };
+
+    
+        const [productList, setProductList]= useState([]);
+        useEffect(()=>{
+            const api = async ()=>{
+                const options = {
+                    method: 'GET',
+                    url: 'https://api.escuelajs.co/api/v1/products',
+                    params: {page: '2', limit: '10'},
+                    headers: {accept: 'application/json'}
+                  };
+                  
+                  try {
+                    const res = await axios.request(options);
+                   
+                    setProductList(res.data.data.Products);
+                    
+                  } catch (error) {
+                    console.error(error);
+                  }
+            };
+            api();
+        },[]);
   return (
    <section className='pt-12'>
     <div className="container">
@@ -95,17 +119,13 @@ home</h2>
                     <ProductItem></ProductItem> */}
 
         <div className="px-2 xl:px-4">
-        <ProductItem />
+        {
+            productList.map((item)=>(
+                <ProductItem key={item._id} data={item}/>
+            ))
+        }
         </div>
-        <div className="px-2 xl:px-4">
-        <ProductItem />
-        </div>
-        <div className="px-2 xl:px-4">
-        <ProductItem />
-        </div>
-        <div className="px-2 xl:px-4">
-        <ProductItem />
-        </div>
+        
                     </Slider>
                     </div>   
         
