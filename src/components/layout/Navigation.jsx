@@ -82,7 +82,7 @@ const Navigation = () => {
                 <li>
                   <Link to="/login" className="flex gap-2 items-end relative">
                     <LuUser className="text-xl lg:text-3xl text-secondary" />
-                    <span className="hidden md:block">Account</span>
+                    <span className="hidden md:block">LogIn</span>
                   </Link>
                 </li>
               </ul>
