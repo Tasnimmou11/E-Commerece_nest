@@ -15,23 +15,27 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { Link } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
+  // const dispatch = useDispatch();
+  const data = useSelector((state)=>(state.alu.value))
+  console.log(data);
   return (
     <header className="relative shadow-sm">
       {/* header top part */}
       <div className="shadow-md md:shadow-none ">
         <div className="container ">
-          <div className="  flex justify-between items-center py-8 gap-4">
+          <div className="  flex justify-between items-center py-8  gap-2 ">
             <button
               onClick={() => setSidebar(true)}
               className="md:hidden text-2xl text-primary"
             >
               <FaBars />
             </button>
-            <Link to="/" className="w-32 lg:w-auto">
+            <Link to="/" className="md:w-32 lg:w-auto">
               <img src="/logo.png" alt="logo" className="" />
             </Link>
 
@@ -51,8 +55,8 @@ const Navigation = () => {
               <IoSearchOutline className="ml-auto" />
             </div>
             <div>
-              <ul className=" flex gap-3 :gap-5 text-sm">
-                <li>
+              <ul className=" flex gap-3 md:gap-5 text-sm">
+                {/* <li>
                   <Link to="/" className="flex gap-2 items-end relative">
                     <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-15">
                       0
@@ -69,10 +73,10 @@ const Navigation = () => {
                     <IoMdHeartEmpty className="text-xl lg:text-3xl text-secondary" />
                     <span className="hidden md:block">Wishlist</span>
                   </Link>
-                </li>
+                </li> */}
                 <li>
-                  <Link to="/cart" className="flex gap-2 items-end relative">
-                    <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-2 -right-2 md:-top-2 md:right-6">
+                  <Link to="/cart" className="flex gap-2 py-2 lg:py-0 items-end relative">
+                    <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-1 -right-2 md:-top-2 md:right-6 lg:-top-3 lg:right-4">
                       0
                     </span>
                     <GrCart className="text-xl lg:text-3xl text-secondary" />
@@ -80,10 +84,19 @@ const Navigation = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/login" className="flex gap-2 items-end relative">
+                  <Link to="/login" className="flex py-2 lg:py-0 items-end relative">
                     <LuUser className="text-xl lg:text-3xl text-secondary" />
-                    <span className="hidden md:block">LogIn</span>
+                    <span className="hidden md:block ">LogIn</span>
                   </Link>
+                </li>
+                <li className="flex gap-2 items-center">
+                  <div className="userImage overflow-hidden w-[35px] h-[35px] rounded-full bg-gray-200">
+                    <img src={data.userPhoto} alt="user profile" />
+                    </div>
+                    <h2 className="text-sm font-medium text-black">
+                    {data.userName}
+                    </h2>
+                  
                 </li>
               </ul>
             </div>
