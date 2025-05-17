@@ -16,8 +16,9 @@ const Products = () => {
               
               try {
                 const res = await axios.request(options);
-               
-                setProductList(res.data.data.Products);
+                console.log(res.data);
+                
+                setProductList(res.data);
                 
               } catch (error) {
                 console.error(error);
@@ -45,7 +46,7 @@ const Products = () => {
             <div className='grid grid-cols-6 gap-6'>
               {
                 productList.map((item) =>(
-                  <ProductItem key={item._id} data={item}/>
+                  <ProductItem key={item.id} data={item}/>
                 ))
               }
                 

@@ -21,8 +21,8 @@ const Navigation = () => {
   const [show, setShow] = useState(false);
   const [sidebar, setSidebar] = useState(false);
   // const dispatch = useDispatch();
-  const data = useSelector((state)=>(state.alu.value))
-  console.log(data);
+  const userData = useSelector((state)=>(state.user.user))
+  console.log(userData);
   return (
     <header className="relative shadow-sm">
       {/* header top part */}
@@ -83,21 +83,28 @@ const Navigation = () => {
                     <span className="hidden md:block">Cart</span>
                   </Link>
                 </li>
-                <li>
-                  <Link to="/login" className="flex py-2 lg:py-0 items-end relative">
+                <li className="flex gap-2 items-center">
+                  {
+                    userData
+                    ?
+                     <>
+                     <div className="userImage overflow-hidden w-[35px] h-[35px] rounded-full bg-gray-200">
+                    <img src={userData?.avatar?.url} alt="user profile" />
+                    </div>
+                    <h2 className=" text-sm font-medium text-black">
+                    {userData?.username}
+                    </h2>
+                     </>
+                    :
+                      <Link to="/login" className="flex py-2 lg:py-0 items-end relative">
                     <LuUser className="text-xl lg:text-3xl text-secondary" />
                     <span className="hidden md:block ">LogIn</span>
                   </Link>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <div className="userImage overflow-hidden w-[35px] h-[35px] rounded-full bg-gray-200">
-                    <img src={data.userPhoto} alt="user profile" />
-                    </div>
-                    <h2 className="text-sm font-medium text-black">
-                    {data.userName}
-                    </h2>
+                  }
                   
+                
                 </li>
+                
               </ul>
             </div>
             {/* main menu mobile device */}

@@ -66,7 +66,7 @@ const BestSells = () => {
                   try {
                     const res = await axios.request(options);
                    
-                    setProductList(res.data.data.Products);
+                    setProductList(res.data);
                     
                   } catch (error) {
                     console.error(error);
@@ -74,6 +74,7 @@ const BestSells = () => {
             };
             api();
         },[]);
+        productList.length = 10;
   return (
    <section className='pt-12'>
     <div className="container">
@@ -111,21 +112,26 @@ home</h2>
                 <div className='xl:w-[75%] md:w-full   '>
                 <Slider {...settings}>
                 {/* slider div */}
-                    
+                  {/* {productList.slice(0, 4).map((item) => (  */}
                     {/* <ProductItem></ProductItem>
                     
                     <ProductItem></ProductItem >
                     <ProductItem></ProductItem>
                     <ProductItem></ProductItem> */}
-
+{/* 
         <div className="px-2 xl:px-4">
         {
             productList.map((item)=>(
-                <ProductItem key={item._id} data={item}/>
+                <ProductItem key={item.id} data={item}/>
             ))
         }
-        </div>
-        
+        </div> */}
+                
+                {productList.map((item) => (
+    <div key={item.id} className="px-2 xl:px-4">
+      <ProductItem data={item} />
+    </div>
+  ))}
                     </Slider>
                     </div>   
         

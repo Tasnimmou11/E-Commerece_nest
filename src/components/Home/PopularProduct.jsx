@@ -16,7 +16,7 @@ const PopularProduct = () => {
               try {
                 const res = await axios.request(options);
                
-                setProductList(res.data.data.Products);
+                setProductList(res.data);
                 
               } catch (error) {
                 console.error(error);
@@ -24,6 +24,7 @@ const PopularProduct = () => {
         };
         api();
     },[]);
+    productList.length =10;
   return (
     <section>
         <div className="container">
@@ -70,7 +71,7 @@ const PopularProduct = () => {
         <div className='pt-11 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-5 gap-x-6 gap-y-8' >
         {
                 productList.map((item) =>(
-                <ProductItem key={item._id} data={item}/>
+                <ProductItem key={item.id} data={item}/>
                 ))
             }
         </div>
