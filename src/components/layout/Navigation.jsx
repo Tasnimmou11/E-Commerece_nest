@@ -197,7 +197,7 @@ const Navigation = () => {
                   </ul>
                   {/* sign up box */}
                   <div className="my-4 mx-3 border border-[#ececec] ">
-                    <Link to="/" className="flex items-center px-3 py-4 gap-2">
+                    <Link to="/login" className="flex items-center px-3 py-4 gap-2">
                       <LuUser className="text-base  text-brand" />
                       <span className="text-base">Log In/Sign Up</span>
                     </Link>

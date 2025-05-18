@@ -38,8 +38,8 @@ const ProductItem = ({data}) => {
         <p className='text-sm font-normal text-secondary
         '>
             By <span className='text-brand'>NestFood</span> </p>
-    <div className='flex flex-col md:flex-row gap-2 items-center justify-between pt-6'>
-        <h4 className='text-sm md:text-lg font-bold  text-brand flex gap-2'>
+    <div className='flex flex-row md:flex-row gap-2 items-center justify-between pt-6'>
+        <h4 className='text-sm md:text-lg font-bold  text-brand flex items-center gap-2'>
             ${data?.price}
             <span className='text-secondary 
              text-sm line-through '>${data?.price+ 10}</span>

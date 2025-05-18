@@ -45,7 +45,7 @@ const BestSells = () => {
         {
             breakpoint: 512,
             settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1,
             },
         },
@@ -109,7 +109,7 @@ home</h2>
                     </Link>
                 </div>
                 
-                <div className='xl:w-[75%] md:w-full   '>
+                <div className='xl:w-[75%] md:w-full    '>
                 <Slider {...settings}>
                 {/* slider div */}
                   {/* {productList.slice(0, 4).map((item) => (  */}
