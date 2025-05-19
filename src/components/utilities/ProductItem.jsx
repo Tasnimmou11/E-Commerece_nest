@@ -12,7 +12,7 @@ const ProductItem = ({data}) => {
         </div>
         <img src= {data?.images[0]} alt="popularproduct1" className='w-full ' />
         <h4 className='text-xs font-normal text-secondary'>Snack</h4>
-        <Link to="/productdetails" className=' text-sm md:text-base text-primary font-bold hover:text-brand transition-all'>
+        <Link to={`/productdetails/${data.slug}`} className=' text-sm md:text-base text-primary font-bold hover:text-brand transition-all'>
        {data?.title}
        </Link>
         <div className="flex gap-3  py-2.5">

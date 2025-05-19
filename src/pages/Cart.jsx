@@ -3,6 +3,8 @@ import BreadCrumb from '../components/utilities/BreadCrumb'
 import CartItem from '../components/utilities/CartItem'
 import { PiSignOut } from 'react-icons/pi'
 import { Link } from 'react-router'
+import ResponsiveCart from '../components/utilities/ResponsiveCart'
+
 
 
 const Cart = () => {
@@ -14,11 +16,12 @@ const Cart = () => {
             <BreadCrumb/>
         </div>
     </div>
-    <div className='  border-t border-[#cecece]'></div>
-    <div className="container py-12">
+    {/* <div className='hidden bg-amber-700red  border-t border-[#cecece]'></div> */}
+    <div className="container py-12 ">
     <h2 className='text-6xl text-primary font-bold'>Your Cart</h2>
     <p className='py-6 text-secondary font-normal'>There are 3 products inb your cart</p>
-    <div className='flex gap-10'>
+    <div className='hidden md:block'>
+      <div className=' flex gap-10'>
     <table className="w-9/12 ">
     <thead className="bg-[#ECECEC] text-primary font-bold text-base ">
       <tr>
@@ -37,7 +40,7 @@ const Cart = () => {
     </tbody>
   </table>
 
-  <div className='h-96 shadow-md border border-[#ECECEC] rounded-md'>
+  <div className=' h-96 shadow-md border border-[#ECECEC] rounded-md'>
     {/* <div className='flex '>
     <h5 className='font-bold text-[#B6B6B6] text-base'>Subtotal</h5>
     <p className='font-bold text-brand text-2xl'>$12.31</p>
@@ -69,6 +72,22 @@ const Cart = () => {
   </div>
     </div>
     </div>
+    </div>
+
+
+    {/* cart mobile device */}
+   
+     
+    
+    
+     <div className=''>
+      <ResponsiveCart></ResponsiveCart>
+      <ResponsiveCart></ResponsiveCart>
+      <ResponsiveCart></ResponsiveCart>
+      <ResponsiveCart></ResponsiveCart>
+    </div>
+    
+    
     
    </section>
   )
