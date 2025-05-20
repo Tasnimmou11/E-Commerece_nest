@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BreadCrumb from '../components/utilities/BreadCrumb'
 import CartItem from '../components/utilities/CartItem'
 import { PiSignOut } from 'react-icons/pi'
 import { Link } from 'react-router'
 import ResponsiveCart from '../components/utilities/ResponsiveCart'
+import axios from 'axios';
 
 
 
 const Cart = () => {
+  const access_token = localStorage.getItem("token");
+  console.log(access_token);
+  useEffect (()=>{
+    (async()=>{
+      const options = {
+  method: 'GET',
+  url: 'https://api.freeapi.app/api/v1/ecommerce/cart',
+  headers: {accept: 'application/json',access_token}
+};
+
+try {
+  const { data } = await axios.request(options);
+  console.log(data);
+} catch (error) {
+  console.error(error);
+}
+    })()
+  },[])
   return (
    <section className='  border-t border-[#cecece]'>
     

@@ -7,6 +7,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 
 import SignUp from "./pages/SignUp";
+import Contact from "./pages/Contact";
 
 function App() {
  
@@ -21,6 +22,7 @@ function App() {
       <Route path="/shop" element={<Shop/>} />
       <Route path="/productdetails/:slug" element={<ProductDetails/>} />
       <Route path="/cart" element={<Cart/>} />
+      <Route path="/contact" element={<Contact/>} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -3,12 +3,14 @@ import { IoLocationOutline } from 'react-icons/io5'
 import { LuSend } from 'react-icons/lu'
 import { TfiAlarmClock, TfiHeadphoneAlt } from 'react-icons/tfi'
 import { Link } from 'react-router'
+import Subscribe from '../utilities/Subscribe'
 
 
 const Footer = () => {
   return (
     <footer className='pt-16'>
       <div className="container">
+        
         
         <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6  pb-11'>
           {/* 1st part */}

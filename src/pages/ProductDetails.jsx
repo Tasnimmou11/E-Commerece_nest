@@ -47,7 +47,9 @@ const ProductDetails = () => {
               api();
           },[]);
           console.log(productData);
-          
+       const handleAddCart = ()=>{
+        
+       } 
   return (
     <section className='py-12'>
         <div className="container">
@@ -95,7 +97,7 @@ const ProductDetails = () => {
                 <div className='flex pt-10 items-center gap-5'>
                    <input type='number' value={"1"} 
                    className='border-2 border-brand rounded-xl w-20 text-center py-3 outline-0 text-xl'/> 
-                 <button className='bg-brand flex justify-center gap-2 items-center font-bold text-lg py-2 px-4 md:px-4 md:py-2 rounded-sm cursor-pointer text-white'>
+                 <button onClick={handleAddCart} className='bg-brand flex justify-center gap-2 items-center font-bold text-lg py-2 px-4 md:px-4 md:py-2 rounded-sm cursor-pointer text-white'>
                             <LuShoppingCart />
                                 <span className=''>Add to cart</span>
                             </button> 
