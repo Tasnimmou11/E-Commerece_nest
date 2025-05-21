@@ -22,7 +22,8 @@ const Navigation = () => {
   const [sidebar, setSidebar] = useState(false);
   // const dispatch = useDispatch();
   const userData = useSelector((state)=>(state.user.user))
-  console.log(userData);
+  const cartData = useSelector((state)=>(state.cart.cart))
+  // console.log(userData);
   return (
     <header className="relative shadow-sm">
       {/* header top part */}
@@ -77,7 +78,7 @@ const Navigation = () => {
                 <li>
                   <Link to="/cart" className="flex gap-2 py-2 lg:py-0 items-end relative">
                     <span className="w-4 h-4 lg:w-6 lg:h-6 text-xs md:text-sm bg-brand rounded-full text-white flex items-center justify-center absolute -top-1 -right-2 md:-top-2 md:right-6 lg:-top-3 lg:right-4">
-                      0
+                     {cartData.length}
                     </span>
                     <GrCart className="text-xl lg:text-3xl text-secondary" />
                     <span className="hidden md:block">Cart</span>

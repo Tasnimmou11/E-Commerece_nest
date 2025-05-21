@@ -38,19 +38,19 @@ const ResponsiveCart = () => {
                                        </ul>
                                        <p className='text-xs font-normal text-secondary'>(4.0)</p>
                                    </div>
-                                <div class="flex justify-between items-center px-10 py-2 ">
+                                <div className="flex justify-between items-center px-10 py-2 ">
       <span className=' font-bold text-black text-base'> price</span>
-      <span class="font-bold text-[#B6B6B6]  text-base">$2.00</span>
+      <span className="font-bold text-[#B6B6B6]  text-base">$2.00</span>
     </div>
-    <div class="flex justify-between  px-10 py-2 ">
+    <div className="flex justify-between  px-10 py-2 ">
       <span className=' font-bold text-black text-base'>Stock</span>
-      <span class="font-bold text-[#B6B6B6] text-base">Free</span>
+      <span className="font-bold text-[#B6B6B6] text-base">Free</span>
     </div>
-    <div class="flex justify-between  px-10 py-2 ">
+    <div className="flex justify-between  px-10 py-2 ">
       <span className=' font-bold text-black text-base pr-3'>price</span>
-      <span class="font-bold text-[#B6B6B6]  text-base ">$2.00</span>
+      <span className="font-bold text-[#B6B6B6]  text-base ">$2.00</span>
     </div>
-    <div class=" pt-3 flex justify-between py-2   px-10 text-base font-semibold">
+    <div className=" pt-3 flex justify-between py-2   px-10 text-base font-semibold">
       <span className=' font-bold text-black text-base'>Remove</span>
       <span className='font-bold text-[#B6B6B6]  text-base'><RiDeleteBinLine /></span>
     </div>

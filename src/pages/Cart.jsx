@@ -4,29 +4,21 @@ import CartItem from '../components/utilities/CartItem'
 import { PiSignOut } from 'react-icons/pi'
 import { Link } from 'react-router'
 import ResponsiveCart from '../components/utilities/ResponsiveCart'
-import axios from 'axios';
+import { useSelector } from 'react-redux'
 
 
 
-const Cart = () => {
-  const access_token = localStorage.getItem("token");
-  console.log(access_token);
-  useEffect (()=>{
-    (async()=>{
-      const options = {
-  method: 'GET',
-  url: 'https://api.freeapi.app/api/v1/ecommerce/cart',
-  headers: {accept: 'application/json',access_token}
-};
 
-try {
-  const { data } = await axios.request(options);
-  console.log(data);
-} catch (error) {
-  console.error(error);
-}
-    })()
-  },[])
+ const Cart = () => {
+  const cartData = useSelector((state)=>(state.cart.cart))
+ 
+  // console.log(cartData);
+   let sum=0;
+  cartData.forEach((item)=>{
+    sum += item.quantity * item.productData.price
+    // console.log(item.quantity, item.productData.price);
+  })
+
   return (
    <section className='  border-t border-[#cecece]'>
     
@@ -52,10 +44,13 @@ try {
       </tr>
     </thead>
     <tbody className="">
-     <CartItem/>
-     <CartItem/>
-     <CartItem/>
-     <CartItem/>
+      {
+        cartData.map((item)=>(
+          <CartItem key={item.productData.id} data={item}/>
+        ))
+      }
+     
+     
     </tbody>
   </table>
 
@@ -64,21 +59,21 @@ try {
     <h5 className='font-bold text-[#B6B6B6] text-base'>Subtotal</h5>
     <p className='font-bold text-brand text-2xl'>$12.31</p>
     </div> */}
-     <div class="flex justify-between px-10 py-6 border-b border-[#ECECEC]">
+     <div className="flex justify-between px-10 py-6 border-b border-[#ECECEC]">
       <span className=' font-bold text-[#B6B6B6] text-base'> Subtotal</span>
-      <span class="font-bold text-brand text-2xl">$2.00</span>
+      <span className="font-bold text-brand text-2xl">${sum}</span>
     </div>
-    <div class="flex justify-between  px-10 py-6 border-b border-[#ECECEC] ">
+    <div className="flex justify-between  px-10 py-6 border-b border-[#ECECEC] ">
       <span className=' font-bold text-[#B6B6B6] text-base'>Shipping</span>
-      <span class="font-bold text-primary text-base">Free</span>
+      <span className="font-bold text-primary text-base">Free</span>
     </div>
-    <div class="flex justify-between  px-10 py-6 border-b border-[#ECECEC]">
+    <div className="flex justify-between  px-10 py-6 border-b border-[#ECECEC]">
       <span className=' font-bold text-[#B6B6B6] text-base pr-3'>Estimate for</span>
-      <span class="font-bold text-primary text-base ">United Kingdom</span>
+      <span className="font-bold text-primary text-base ">United Kingdom</span>
     </div>
-    <div class=" pt-3 flex justify-between py-6   px-10 text-base font-semibold">
+    <div className=" pt-3 flex justify-between py-6   px-10 text-base font-semibold">
       <span className=' font-bold text-[#B6B6B6] text-base'>Total</span>
-      <span className='font-bold text-brand text-2xl'>$2.00</span>
+      <span className='font-bold text-brand text-2xl'>${sum}</span>
     </div>
     <div className='mx-11'>
     <Link to="/" className=' bg-brand inline-flex justify-center gap-2 items-center  font-bold text-lg p-2 md:px-4 md:py-2 rounded-sm cursor-pointer text-brand'>

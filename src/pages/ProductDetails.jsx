@@ -4,6 +4,8 @@ import { FaStar } from 'react-icons/fa6';
 import { LuShoppingCart } from 'react-icons/lu';
 import axios from 'axios';
 import { useParams } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../slices/cartSlice';
 const API = {
     images: [
       "https://i.imgur.com/QkIa5tT.jpeg",
@@ -13,6 +15,8 @@ const API = {
   };
 
 const ProductDetails = () => {
+    const dispatch = useDispatch()
+    const[quantity,setQuantity] = useState("1")
     const params =useParams()
     const settings = {
         direction: "horizontal", // or "vertical"
@@ -48,7 +52,9 @@ const ProductDetails = () => {
           },[]);
           console.log(productData);
        const handleAddCart = ()=>{
-        
+          // console.log(productData);
+         
+          dispatch(addToCart({quantity, productData }))
        } 
   return (
     <section className='py-12'>
@@ -95,7 +101,10 @@ const ProductDetails = () => {
                         </div>
                         <p className='w-80 md:w-96 text-base font-normal text-secondary'> {productData?.description}</p>
                 <div className='flex pt-10 items-center gap-5'>
-                   <input type='number' value={"1"} 
+                   <input 
+                   onChange={(e)=>setQuantity(e.target.value)}
+                   min={1}
+                   type='number' value={"1"} 
                    className='border-2 border-brand rounded-xl w-20 text-center py-3 outline-0 text-xl'/> 
                  <button onClick={handleAddCart} className='bg-brand flex justify-center gap-2 items-center font-bold text-lg py-2 px-4 md:px-4 md:py-2 rounded-sm cursor-pointer text-white'>
                             <LuShoppingCart />
