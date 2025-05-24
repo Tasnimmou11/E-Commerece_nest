@@ -66,6 +66,10 @@ const handleRemove = () => {
           </button>
         </td>
       </tr>
+
+      // responsive cart item
+      
+      
   )
 }
 

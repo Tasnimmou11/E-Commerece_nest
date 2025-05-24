@@ -4,8 +4,13 @@ import { FaStar } from 'react-icons/fa6';
 import { LuShoppingCart } from 'react-icons/lu';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
+import {
+  increment,
+  decrement,
+  setQuantity,
+} from '../slices/quantitySlice';
 const API = {
     images: [
       "https://i.imgur.com/QkIa5tT.jpeg",
@@ -16,7 +21,9 @@ const API = {
 
 const ProductDetails = () => {
     const dispatch = useDispatch()
-    const[quantity,setQuantity] = useState("1")
+    // const[quantity,setQuantity] = useState("1")
+   const quantity = useSelector((state) => state.quantity);
+
     const params =useParams()
     const settings = {
         direction: "horizontal", // or "vertical"
@@ -61,7 +68,7 @@ const ProductDetails = () => {
         <div className="container">
             <div className=" md:flex md:gap-11">
                 <div className='w-fit md:w-1/3'>
-                <ProductSlide settings={settings} api={productData.images} />
+                <ProductSlide settings={settings} api={productData?.images} />
                 </div>
                 <div>
                     <h2 className=' pt-8  md:py-0 text-2xl md:text-4xl font-bold text-primary'>
@@ -92,20 +99,37 @@ const ProductDetails = () => {
                             '>
                                 By <span className='text-brand'>NestFood</span> </p>
                         <div className='flex flex-col md:flex-row gap-2 md:items-center justify-between md:pt-6'>
-                            <h4 className='text-2xl md:text-4xl font-bold  text-brand py-4 '>${productData.price}
+                            <h4 className='text-2xl md:text-4xl font-bold  text-brand py-4 '>${productData?.price}
                                 <span className='text-secondary 
-                                 text-sm line-through px-2'>${productData.price+100}</span>
+                                 text-sm line-through px-2'>${productData?.price+100}</span>
                                  </h4>
                                 
                             
                         </div>
                         <p className='w-80 md:w-96 text-base font-normal text-secondary'> {productData?.description}</p>
-                <div className='flex pt-10 items-center gap-5'>
+                <div className='flex pt-10 items-center  gap-5'>
+                  <div className='border-2 border-brand  rounded-xl'>
+                    <button
+          onClick={() => dispatch(decrement())}
+          className="px-3 py-1 rounded-lg text-xl"
+        >
+          -
+        </button>
                    <input 
-                   onChange={(e)=>setQuantity(e.target.value)}
-                   min={1}
-                   type='number' value={"1"} 
-                   className='border-2 border-brand rounded-xl w-20 text-center py-3 outline-0 text-xl'/> 
+                  //  onChange={(e)=>setQuantity(e.target.value)}
+                   min={1} 
+                   type='number' 
+                  //  value={"1"} 
+                value={quantity}
+          onChange={(e) => dispatch(setQuantity(Number(e.target.value)))}
+                   className='input-no-spinner  w-8 text-center py-3 outline-0 text-xl'/> 
+                 <button
+          onClick={() => dispatch(increment())}
+          className="px-3 py-1 rounded-lg text-xl"
+        >
+          +
+        </button> 
+                  </div>
                  <button onClick={handleAddCart} className='bg-brand flex justify-center gap-2 items-center font-bold text-lg py-2 px-4 md:px-4 md:py-2 rounded-sm cursor-pointer text-white'>
                             <LuShoppingCart />
                                 <span className=''>Add to cart</span>
@@ -115,6 +139,8 @@ const ProductDetails = () => {
                 </div>
             </div>
         </div>
+
+        
     </section>
   )
 }
