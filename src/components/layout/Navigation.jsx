@@ -338,12 +338,14 @@ const Navigation = () => {
           </div>
           <ul className="flex  gap-3 md:gap-2 lg:gap-4 xl:gap-6 font-bold text-primary text-base md:text-xs lg:text-base xl:text-lg ">
             <li>
-              <Link to="/" className="hover:text-brand transition">
+              <Link to="/" 
+               
+              className="hover:text-brand transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/" className="hover:text-brand transition">
+              <Link to="/about" className="hover:text-brand transition">
                 About
               </Link>
             </li>

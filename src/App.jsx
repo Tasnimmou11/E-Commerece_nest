@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 
 import SignUp from "./pages/SignUp";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 function App() {
  
@@ -23,6 +24,7 @@ function App() {
       <Route path="/productdetails/:slug" element={<ProductDetails/>} />
       <Route path="/cart" element={<Cart/>} />
       <Route path="/contact" element={<Contact/>} />
+      <Route path="/about" element={<About/>} />
       </Route>
     </Routes>
   </BrowserRouter>

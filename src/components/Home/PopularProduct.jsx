@@ -68,7 +68,7 @@ const PopularProduct = () => {
             </li>
         </ul>
         </div>
-        <div className='pt-11 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-5 gap-x-6 gap-y-8' >
+        <div className='pt-11 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-5 gap-x-6 gap-y-8' >
         {
                 productList.map((item) =>(
                 <ProductItem key={item.id} data={item}/>
