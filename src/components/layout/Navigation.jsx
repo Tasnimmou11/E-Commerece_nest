@@ -148,7 +148,7 @@ const Navigation = () => {
                     </li>
                     <li className="w-full">
                       <Link
-                        to="/"
+                        to="/about"
                         className="border-b block border-[#ececec] py-2"
                       >
                         About

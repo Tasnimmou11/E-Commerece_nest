@@ -3,7 +3,7 @@ import ProductSlide from "product-slide";
 import { FaStar } from 'react-icons/fa6';
 import { LuShoppingCart } from 'react-icons/lu';
 import axios from 'axios';
-import { useParams } from 'react-router';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../slices/cartSlice';
 import {
@@ -11,6 +11,7 @@ import {
   decrement,
   setQuantity,
 } from '../slices/quantitySlice';
+import { useParams } from 'react-router';
 const API = {
     images: [
       "https://i.imgur.com/QkIa5tT.jpeg",
@@ -24,7 +25,7 @@ const ProductDetails = () => {
     // const[quantity,setQuantity] = useState("1")
    const quantity = useSelector((state) => state.quantity);
 
-    const params =useParams()
+    const params = useParams()
     const settings = {
         direction: "horizontal", // or "vertical"
         zoom: true,          // or false
@@ -57,11 +58,12 @@ const ProductDetails = () => {
               };
               api();
           },[]);
-          console.log(productData);
+          // console.log(productData);
+          
+      
        const handleAddCart = ()=>{
           // console.log(productData);
-         
-          dispatch(addToCart({quantity, productData }))
+         dispatch(addToCart({quantity, productData }))
        } 
   return (
     <section className='py-12'>
@@ -131,6 +133,7 @@ const ProductDetails = () => {
         </button> 
                   </div>
                  <button onClick={handleAddCart} className='bg-brand flex justify-center gap-2 items-center font-bold text-lg py-2 px-4 md:px-4 md:py-2 rounded-sm cursor-pointer text-white'>
+                            
                             <LuShoppingCart />
                                 <span className=''>Add to cart</span>
                             </button> 
